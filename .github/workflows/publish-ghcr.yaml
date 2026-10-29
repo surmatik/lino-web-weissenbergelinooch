@@ -16,5 +16,5 @@ jobs:
         run: docker build . --tag ghcr.io/surmatik/webseite-weissenberge:latest
       - name: Bei GHCR anmelden und veröffentlichen
         run: |
-          echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u surmatik --password-stdin
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
           docker push ghcr.io/surmatik/webseite-weissenberge:latest
