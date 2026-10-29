@@ -11,7 +11,7 @@ jobs:
   build_and_publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Bild erstellen
         run: docker build . --tag ghcr.io/surmatik/webseite-weissenberge:latest
       - name: Bei GHCR anmelden und veröffentlichen
